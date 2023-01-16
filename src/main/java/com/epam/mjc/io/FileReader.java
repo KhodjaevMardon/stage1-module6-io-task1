@@ -26,6 +26,8 @@ public class FileReader {
                     case "Phone":
                         profile.setPhone(Long.parseLong(splitBySemicolon[1].trim()));
                         break;
+                    default:
+                        throw new IllegalArgumentException("Unexpected field for Profile entity");
                 }
             }
             fileInputStream.close();
