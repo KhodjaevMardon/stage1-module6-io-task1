@@ -26,9 +26,13 @@ public class FileReader {
                     case "Phone":
                         profile.setPhone(Long.parseLong(splitBySemicolon[1].trim()));
                         break;
+                    default:
+                        throw new IllegalArgumentException("unexpected field");
                 }
             }
             fileInputStream.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
