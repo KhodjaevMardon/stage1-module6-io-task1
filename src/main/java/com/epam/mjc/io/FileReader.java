@@ -32,9 +32,9 @@ public class FileReader {
             }
             fileInputStream.close();
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            System.out.println("File not found");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("IO Exception while trying to read/close from FileInputStream");
         }
         return profile;
     }
